@@ -1,0 +1,4 @@
+name: InstantBlock
+version: '1.0-SNAPSHOT'
+main: de.ventilover.instantBlock.InstantBlock
+api-version: '1.21'
