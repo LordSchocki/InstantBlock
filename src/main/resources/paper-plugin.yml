@@ -2,3 +2,8 @@ name: InstantBlock
 version: '1.0-SNAPSHOT'
 main: de.ventilover.instantBlock.InstantBlock
 api-version: '1.21'
+commands:
+  TriggerBlockCommand:
+    description: Befehl um Item Aufsammeln zu aktivieren
+    usage: /itemaufsammeln
+    permission: InstantBlock.item
