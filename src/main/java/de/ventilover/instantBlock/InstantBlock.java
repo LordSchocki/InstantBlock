@@ -16,7 +16,7 @@ public final class InstantBlock extends JavaPlugin {
         // Plugin startup logic
         instance = this;
         Bukkit.getPluginManager().registerEvents(new BlockBreakListener(),this);
-        Objects.requireNonNull(this.getCommand("itemaufsammeln")).setExecutor(new TriggerBlockCommand());
+        Bukkit.getCommandMap().register("itemaufsammeln", new TriggerBlockCommand());
         instance.getLogger().info("Started InstantBlock");
 
     }

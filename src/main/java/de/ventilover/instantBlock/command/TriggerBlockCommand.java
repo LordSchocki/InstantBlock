@@ -10,12 +10,18 @@ import org.jetbrains.annotations.NotNull;
 import java.util.ArrayList;
 import java.util.UUID;
 
-public class TriggerBlockCommand implements CommandExecutor {
-    private static final ArrayList<UUID> triggeredPlayers = new ArrayList<>();
+public class TriggerBlockCommand extends Command {
+    public static final ArrayList<UUID> triggeredPlayers = new ArrayList<>();
+
+    public TriggerBlockCommand() {
+        super("itemaufsammeln");
+        this.usageMessage = "/itemaufsammeln";
+        this.description = "Benutzen ja danke";
+    }
+
 
     @Override
-    public boolean onCommand(@NotNull CommandSender commandSender, @NotNull Command command, @NotNull String s, @NotNull String[] strings) {
-
+    public boolean execute(@NotNull CommandSender commandSender, @NotNull String s, @NotNull String[] strings) {
         if (commandSender instanceof Player  player) {
 
             if (triggeredPlayers.contains(player.getUniqueId())){

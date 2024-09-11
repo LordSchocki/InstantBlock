@@ -1,5 +1,6 @@
 package de.ventilover.instantBlock.Listener;
 
+import de.ventilover.instantBlock.command.TriggerBlockCommand;
 import io.papermc.paper.event.block.BlockBreakBlockEvent;
 import org.bukkit.Material;
 import org.bukkit.block.Container;
@@ -16,7 +17,7 @@ public class BlockBreakListener implements Listener {
     @EventHandler
     public void onBlockBreak(BlockBreakEvent event){
 
-        if (event.getBlock().getState() instanceof Container){
+        if (event.getBlock().getState() instanceof Container || !TriggerBlockCommand.triggeredPlayers.contains(event.getPlayer().getUniqueId())){
             return;
         }
 
